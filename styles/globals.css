@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════════════════════ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-ivory text-charcoal-600 font-sans text-base leading-relaxed;
+  }
+
+  /* ── Headings reset ────────────────────────────────────── */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-semibold text-charcoal-800 leading-tight;
+  }
+
+  /* ── Selection highlight ───────────────────────────────── */
+  ::selection {
+    @apply bg-gold-200/50 text-charcoal-900;
+  }
+
+  /* ── Scrollbar (Webkit) ────────────────────────────────── */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-cream;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-beige-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold-500;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COMPONENT CLASSES
+   ═══════════════════════════════════════════════════════════ */
+@layer components {
+
+  /* ── Section layout ────────────────────────────────────── */
+  .section-padding {
+    @apply py-22 md:py-30 px-6 md:px-12 lg:px-20;
+  }
+
+  /* ── Decorative rule under headings ────────────────────── */
+  .gold-rule {
+    @apply block w-14 h-[1.5px] bg-gradient-to-r from-gold-500 to-gold-300/40 mt-5 mx-auto;
+  }
+
+  .gold-rule-left {
+    @apply block w-14 h-[1.5px] bg-gradient-to-r from-gold-500 to-gold-300/40 mt-5;
+  }
+
+  /* ── Section label / overline ──────────────────────────── */
+  .section-label {
+    @apply inline-block text-[11px] font-sans font-semibold tracking-label uppercase text-gold-600;
+  }
+
+  /* ── Glass card ────────────────────────────────────────── */
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-md border border-beige-200/70 rounded-3xl shadow-soft;
+  }
+
+  /* ── Gold gradient text ────────────────────────────────── */
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-700 via-gold-500 to-bronze-500;
+  }
+
+  /* ── Buttons ───────────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-sans font-semibold text-[13px] tracking-wider uppercase bg-charcoal-800 text-ivory shadow-soft transition-all duration-400 ease-luxury hover:bg-charcoal-700 hover:shadow-soft-md hover:-translate-y-px active:translate-y-0 active:shadow-soft;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-sans font-semibold text-[13px] tracking-wider uppercase border border-charcoal-200 text-charcoal-700 transition-all duration-400 ease-luxury hover:border-gold-400 hover:text-gold-700 hover:-translate-y-px active:translate-y-0;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-sans font-semibold text-[13px] tracking-wider uppercase bg-gold-500 text-white shadow-soft shadow-gold-500/10 transition-all duration-400 ease-luxury hover:bg-gold-600 hover:shadow-soft-md hover:-translate-y-px active:translate-y-0 active:shadow-soft;
+  }
+
+  /* ── Form inputs ───────────────────────────────────────── */
+  .input-base {
+    @apply w-full bg-cream/60 border border-beige-200 rounded-xl px-5 py-3.5 text-sm text-charcoal-700 font-sans placeholder:text-charcoal-300 shadow-inner-soft transition-all duration-300 focus:outline-none focus:border-gold-300 focus:ring-2 focus:ring-gold-100 focus:shadow-gold-glow;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   UTILITY HELPERS
+   ═══════════════════════════════════════════════════════════ */
+@layer utilities {
+
+  /* Hide scrollbar but keep scroll */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Faded edge masks for horizontal scroll containers */
+  .fade-edges {
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+}
