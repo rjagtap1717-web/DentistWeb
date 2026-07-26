@@ -13,6 +13,17 @@ const fadeUp = {
 };
 
 export default function Contact() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    const subject = `Consultation Request: ${data.name || 'New Patient'}`;
+    const body = `Name: ${data.name || 'N/A'}\nEmail: ${data.email || 'N/A'}\nPhone: ${data.phone || 'N/A'}\nPrimary Interest: ${data.service || 'N/A'}\n\nObjectives/Notes:\n${data.message || 'N/A'}`;
+
+    window.location.href = `mailto:${siteInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   return (
     <section id="contact" className="section-padding bg-cream/30 relative overflow-hidden">
       {/* Glow effect */}
@@ -20,7 +31,7 @@ export default function Contact() {
 
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          
+
           {/* Left Column — Contact Info */}
           <motion.div
             initial="hidden"
@@ -87,11 +98,26 @@ export default function Contact() {
                       {item.icon}
                     </svg>
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <span className="text-[10px] font-sans font-semibold tracking-label uppercase text-charcoal-400 block">
                       {item.label}
                     </span>
                     <p className="text-sm text-charcoal-700 font-medium mt-0.5">{item.text}</p>
+
+                    {item.label === 'Location' && (
+                      <div className="mt-4 w-full h-48 rounded-xl overflow-hidden border border-beige-200/80 shadow-soft">
+                        <iframe
+                          src={`https://maps.google.com/maps?q=${encodeURIComponent('742 Fifth Avenue, New York, NY')}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen=""
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="Clinic Location Map"
+                        ></iframe>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -106,7 +132,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.2, ease }}
           >
             <form
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
               className="glass-card p-8 sm:p-10 space-y-5"
             >
               <h3 className="font-serif text-2xl font-semibold text-charcoal-900 mb-2">

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { galleryImages } from '../data/siteData';
 
@@ -42,24 +43,17 @@ export default function Gallery() {
               viewport={{ once: true, amount: 0.2 }}
               variants={itemVariants}
               whileHover={{ y: -4, transition: { duration: 0.3, ease } }}
-              className={`group relative rounded-3xl overflow-hidden border border-beige-200/80 shadow-soft ${
-                i === 0 || i === 3 ? 'md:row-span-2 aspect-[3/4]' : 'aspect-[4/3]'
-              }`}
+              className={`group relative rounded-3xl overflow-hidden border border-beige-200/80 shadow-soft ${i === 0 || i === 3 ? 'md:row-span-2 aspect-[3/4]' : 'aspect-[4/3]'
+                }`}
             >
-              {/* Image Placeholder with Editorial Gradient */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${img.gradient} transition-transform duration-700 ease-luxury group-hover:scale-105`}
-              >
-                {/* Subtle pattern */}
-                <div
-                  className="absolute inset-0 opacity-[0.03]"
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(circle, rgba(26,25,23,0.8) 1px, transparent 1px)',
-                    backgroundSize: '16px 16px',
-                  }}
-                />
-              </div>
+              {/* Image using next/image */}
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover transition-transform duration-700 ease-luxury group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
 
               {/* Minimal Overlay Info */}
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/60 via-charcoal-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 md:p-8">

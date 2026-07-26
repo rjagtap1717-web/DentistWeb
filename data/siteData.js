@@ -14,12 +14,12 @@ export const siteInfo = {
 };
 
 export const navLinks = [
-  { label: 'Home',         href: '#hero' },
-  { label: 'About',        href: '#about' },
-  { label: 'Services',     href: '#services' },
+  { label: 'Home', href: '#hero' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
   { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Gallery',      href: '#gallery' },
-  { label: 'Contact',      href: '#contact' },
+  { label: 'Gallery', href: '#gallery' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export const heroContent = {
@@ -40,7 +40,7 @@ export const aboutContent = {
     { value: '25+', label: 'Years of Practice' },
     { value: '15K', label: 'Smiles Transformed' },
     { value: '98%', label: 'Patient Satisfaction' },
-    { value: '12',  label: 'Specialist Doctors' },
+    { value: '12', label: 'Specialist Doctors' },
   ],
 };
 
@@ -119,31 +119,37 @@ export const galleryImages = [
     alt: 'Elegant reception area with imported marble accents and bespoke lighting',
     gradient: 'from-gold-200 via-cream to-gold-100',
     label: 'The Reception',
+    src: '/images/chair.jpg',
   },
   {
     alt: 'State-of-the-art treatment suite featuring panoramic Manhattan skyline views',
     gradient: 'from-charcoal-100 via-ivory to-charcoal-50',
     label: 'Treatment Suite',
+    src: '/images/lasermouth.jpg',
   },
   {
     alt: 'Private relaxation lounge with warm ambient lighting and cashmere throws',
     gradient: 'from-gold-100 via-ivory to-gold-50',
     label: 'Relaxation Lounge',
+    src: '/images/smilewomen.jpg',
   },
   {
     alt: 'Advanced digital imaging center equipped with low-dose 3D technology',
     gradient: 'from-charcoal-50 via-cream to-gold-100',
     label: 'Imaging Center',
+    src: '/images/bluelightinsidemouth.jpg',
   },
   {
     alt: 'Intimate consultation room appointed with mid-century designer furnishings',
     gradient: 'from-gold-300 via-gold-100 to-cream',
     label: 'Consultation Room',
+    src: '/images/teethlevel.jpg',
   },
   {
     alt: 'A curated gallery showcasing award-winning smile transformations',
     gradient: 'from-ivory via-gold-50 to-cream',
     label: 'Smile Gallery',
+    src: '/images/perfectteeth.jpg',
   },
 ];
 
@@ -153,13 +159,14 @@ export const contactContent = {
   description:
     'Schedule your private assessment today. Our patient concierge will ensure every nuance of your visit is flawlessly orchestrated — from your initial inquiry to the final, radiant reveal.',
   formFields: [
-    { name: 'name',    label: 'Full Name',      type: 'text',     placeholder: 'Victoria Harrington' },
-    { name: 'email',   label: 'Email Address',   type: 'email',    placeholder: 'victoria@example.com' },
-    { name: 'phone',   label: 'Phone Number',    type: 'tel',      placeholder: '(212) 555-0198' },
-    { name: 'service', label: 'Primary Interest', type: 'select',  placeholder: 'Select a clinical focus',
+    { name: 'name', label: 'Full Name', type: 'text', placeholder: 'Victoria Harrington' },
+    { name: 'email', label: 'Email Address', type: 'email', placeholder: 'victoria@example.com' },
+    { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '(212) 555-0198' },
+    {
+      name: 'service', label: 'Primary Interest', type: 'select', placeholder: 'Select a clinical focus',
       options: ['Cosmetic Artistry', 'Implantology', 'Invisalign & Alignment', 'Restorative Care', 'Preventive Wellness', 'Sedation & Comfort'],
     },
-    { name: 'message', label: 'Your Objectives',    type: 'textarea', placeholder: 'Please share your aspirations for your smile…' },
+    { name: 'message', label: 'Your Objectives', type: 'textarea', placeholder: 'Please share your aspirations for your smile…' },
   ],
 };
 
