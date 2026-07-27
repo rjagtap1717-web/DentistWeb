@@ -115,7 +115,7 @@ export default function Hero() {
       <section
         id="hero-home"
         ref={homeSectionRef}
-        className="relative h-screen w-full flex items-center pt-20 overflow-hidden bg-charcoal-900"
+        className="relative h-[100dvh] min-h-[600px] w-full flex items-center pt-16 sm:pt-20 overflow-hidden bg-charcoal-900"
       >
         {/* ── Background image ─────────────────────────────── */}
         <div className="absolute inset-0 -z-20">
@@ -137,16 +137,16 @@ export default function Hero() {
         />
 
         {/* ── Content ──────────────────────────────────────── */}
-        <div className="relative max-w-7xl w-full mx-auto px-6 md:px-12 flex justify-start z-10" ref={homeContentRef}>
+        <div className="relative max-w-7xl w-full mx-auto px-4 sm:px-6 md:px-12 flex justify-start z-10" ref={homeContentRef}>
           <motion.div 
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="max-w-4xl p-8 md:p-14 lg:p-16 border border-white/40 shadow-[0_16px_48px_rgba(0,0,0,0.25)] rounded-3xl backdrop-blur-xl bg-ivory/25"
+            className="max-w-4xl p-6 sm:p-8 md:p-14 lg:p-16 border border-white/40 shadow-[0_16px_48px_rgba(0,0,0,0.25)] rounded-3xl backdrop-blur-xl bg-ivory/25"
           >
             {/* Overline label */}
-            <motion.div variants={fadeUp(16)} className="mb-6">
+            <motion.div variants={fadeUp(16)} className="mb-4 sm:mb-6">
               <span className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full
                                bg-white/60 backdrop-blur-sm border border-beige-200/60">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse-soft" />
@@ -160,12 +160,12 @@ export default function Hero() {
             <div className="relative">
               <motion.h1
                 variants={fadeUp(30)}
-                className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-black tracking-tight text-charcoal-900 leading-[1.04]"
+                className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[7.5rem] font-black tracking-tight text-charcoal-900 leading-[1.04]"
               >
                 {heroContent.headline.split('\n').map((line, i) => (
-                  <span key={i} className="block pb-2">
+                  <span key={i} className="block pb-1 sm:pb-2">
                     {i === 1 ? (
-                      <span className="font-script font-normal text-6xl sm:text-[6.5rem] md:text-[8.5rem] tracking-normal leading-[0.8] text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-amber-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] py-2">
+                      <span className="font-script font-normal text-[3.25rem] sm:text-6xl md:text-[6.5rem] lg:text-[8.5rem] tracking-normal leading-[0.8] text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-amber-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] py-1 sm:py-2">
                         {line}
                       </span>
                     ) : (
@@ -181,7 +181,7 @@ export default function Hero() {
             {/* Subheadline */}
             <motion.p
               variants={fadeUp(20)}
-              className="mt-6 max-w-prose-wide text-base md:text-lg text-charcoal-500 font-light leading-relaxed"
+              className="mt-4 sm:mt-6 max-w-prose-wide text-sm sm:text-base md:text-lg text-charcoal-500 font-light leading-relaxed"
             >
               {heroContent.subheadline}
             </motion.p>
@@ -189,7 +189,7 @@ export default function Hero() {
             {/* CTA row */}
             <motion.div
               variants={fadeUp(16)}
-              className="mt-10 flex flex-col sm:flex-row items-start gap-4"
+              className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-start gap-3 sm:gap-4"
             >
               <a href="#contact" className="btn-primary">
                 {heroContent.cta}
@@ -206,7 +206,7 @@ export default function Hero() {
             {/* Micro-stats bar */}
             <motion.div
               variants={fadeUp(12)}
-              className="mt-16 flex flex-wrap items-center gap-8 md:gap-12"
+              className="mt-8 sm:mt-16 flex flex-wrap items-center gap-4 sm:gap-8 md:gap-12"
             >
               {[
                 { value: '25+', label: 'Years' },
