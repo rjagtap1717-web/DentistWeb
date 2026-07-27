@@ -4,13 +4,13 @@
    ────────────────────────────────────────────────────────── */
 
 export const siteInfo = {
-  name: 'Aurelian Dental',
+  name: 'Oralea Dental Care',
   tagline: 'Where Artistry Meets Dentistry',
   phone: '(212) 555-0198',
-  email: 'concierge@aureliandental.com',
+  email: 'concierge@oraleadentalcare.com',
   address: '742 Fifth Avenue, Suite 1200, New York, NY 10019',
   hours: 'Mon – Fri: 8 AM – 6 PM · Sat: 9 AM – 2 PM',
-  copyright: `© ${new Date().getFullYear()} Aurelian Dental. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} Oralea Dental Care. All rights reserved.`,
 };
 
 export const navLinks = [
@@ -33,7 +33,7 @@ export const aboutContent = {
   sectionLabel: 'Our Story',
   headline: 'Decades of Excellence,\nOne Patient at a Time',
   paragraphs: [
-    'Since our inception, Aurelian Dental has evolved into Manhattan’s premier destination for bespoke dental artistry. Our philosophy transcends traditional dentistry: we seamlessly merge cutting-edge clinical technology with an uncompromising dedication to your absolute comfort.',
+    'Since our inception, Oralea Dental Care has evolved into Manhattan’s premier destination for bespoke dental artistry. Our philosophy transcends traditional dentistry: we seamlessly merge cutting-edge clinical technology with an uncompromising dedication to your absolute comfort.',
     'Each clinician in our studio brings decades of refined expertise in cosmetic, restorative, and implant disciplines. Whether crafting delicate porcelain veneers or undertaking complex full-arch rehabilitations, our singular focus is delivering results that feel effortlessly, breathtakingly natural.',
   ],
   stats: [
@@ -90,6 +90,8 @@ export const testimonials = [
     quote:
       'Aurelian Dental redefined my expectations. My bespoke veneers are so exquisitely crafted that even my closest confidants simply assume I have extraordinary genetics. The clinical team is truly world-class.',
     rating: 5,
+    location: 'Upper East Side, NY',
+    treatment: 'Porcelain Veneers',
   },
   {
     name: 'James Whitfield',
@@ -97,6 +99,8 @@ export const testimonials = [
     quote:
       'I have visited elite practices globally, yet nothing eclipses the caliber of care provided here. From the moment the elevator doors open, the concierge experience is flawless and deeply personalized.',
     rating: 5,
+    location: 'Tribeca, NY',
+    treatment: 'Full Mouth Restoration',
   },
   {
     name: 'Sophia Chen',
@@ -104,6 +108,8 @@ export const testimonials = [
     quote:
       'After years of harboring dental anxiety, the serene environment at Aurelian transformed my perspective. The tailored sedation protocols ensure every visit is profoundly calming and painless.',
     rating: 5,
+    location: 'SoHo, NY',
+    treatment: 'Cosmetic & Sedation',
   },
   {
     name: 'Marcus DeVille',
@@ -111,6 +117,26 @@ export const testimonials = [
     quote:
       'The obsession with detail is astonishing. Dr. Laurent dedicated over an hour solely to analyzing the light dynamics and shade matching for my ceramics. The result is absolute architectural perfection.',
     rating: 5,
+    location: 'Brooklyn Heights, NY',
+    treatment: 'Implant Architecture',
+  },
+  {
+    name: 'Elena Rostova',
+    role: 'Principal Ballerina',
+    quote:
+      'My smile is integral to my presence on stage. The team restored my confidence with subtle, radiant ceramic work that catches stage light effortlessly.',
+    rating: 5,
+    location: 'Lincoln Center, NY',
+    treatment: 'Smile Transformation',
+  },
+  {
+    name: 'David Sterling',
+    role: 'Managing Partner',
+    quote:
+      'Unmatched professionalism and discretion. The 3D digital preview was spot on, and the final results exceeded every expectation I held.',
+    rating: 5,
+    location: 'Financial District, NY',
+    treatment: 'Invisalign & Veneers',
   },
 ];
 

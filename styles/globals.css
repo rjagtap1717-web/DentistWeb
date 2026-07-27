@@ -82,7 +82,20 @@
 
   /* ── Gold gradient text ────────────────────────────────── */
   .text-gold-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-700 via-gold-500 to-bronze-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 drop-shadow-[0_0_15px_rgba(251,191,36,0.5)];
+  }
+
+  .text-gold-gradient-bright {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 via-amber-300 to-yellow-400;
+    filter: drop-shadow(0 0 22px rgba(250, 204, 21, 0.75));
+  }
+
+  .text-gold-glow {
+    text-shadow: 0 0 16px rgba(234, 179, 8, 0.7), 0 0 32px rgba(202, 138, 4, 0.4);
+  }
+
+  .text-hero-glow {
+    filter: drop-shadow(0 0 30px rgba(234, 179, 8, 0.65)) drop-shadow(0 0 60px rgba(250, 204, 21, 0.4));
   }
 
   /* ── Buttons ───────────────────────────────────────────── */
@@ -121,7 +134,30 @@
 
   /* Faded edge masks for horizontal scroll containers */
   .fade-edges {
-    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
   }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MARQUEE KEYFRAMES
+   ═══════════════════════════════════════════════════════════ */
+@keyframes marqueeRightToLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeRightToLeft 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-track:hover {
+  animation-play-state: paused;
 }
