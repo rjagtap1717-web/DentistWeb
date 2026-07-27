@@ -85,14 +85,14 @@ export default function Hero() {
           <img 
             src="/images/Gemini_Generated_Image_Before.png" 
             alt="Before Transformation" 
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover object-[25%] sm:object-center"
           />
           {/* After Image (Horizontal Wipe from left to right) */}
           <img 
             ref={afterImgRef}
             src="/images/ChatGPT Image After.png" 
             alt="After Transformation" 
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover object-[25%] sm:object-center"
             style={{ clipPath: 'inset(0% 100% 0% 0%)' }}
           />
           
