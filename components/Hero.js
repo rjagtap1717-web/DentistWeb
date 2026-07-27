@@ -38,7 +38,7 @@ export default function Hero() {
       >
         <img
           src="/images/hero-clinic.png"
-          alt="Aurelian Dental clinic interior"
+          alt="Oralea Dental Care clinic interior"
           className="w-full h-full object-cover object-center"
         />
       </motion.div>
@@ -92,7 +92,7 @@ export default function Hero() {
               {heroContent.headline.split('\n').map((line, i) => (
                 <span key={i} className="block">
                   {i === 1 ? (
-                    <span className="text-transparent bg-clip-text bg-gradient-to-br from-gold-500 to-amber-300 italic font-bold drop-shadow-sm">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-ivory to-gold-500 italic font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.1)]">
                       {line}
                     </span>
                   ) : (

@@ -37,43 +37,44 @@ export default function Services() {
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Grid (Flex layout so incomplete rows center nicely) */}
+        <div className="flex flex-wrap justify-center gap-6">
           {services.map((service, i) => (
-            <motion.a
+            <motion.div
               key={service.title}
-              href="#contact"
               custom={i}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
               variants={cardVariants}
               whileHover={{ y: -4, transition: { duration: 0.4, ease } }}
-              className="group glass-card p-8 md:p-9 hover:border-gold-300/40 hover:shadow-soft-xl transition-all duration-500 flex flex-col justify-between block cursor-pointer"
+              className="group glass-card overflow-hidden hover:bg-amber-50/50 hover:border-amber-200 hover:shadow-soft-xl transition-all duration-500 flex flex-col w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]"
             >
-              <div>
+              {/* Image Placeholder */}
+              <div className="w-full h-40 sm:h-48 bg-beige-200 relative overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Content Area */}
+              <div className="p-6 md:p-7 flex flex-col flex-grow">
                 {/* Minimal Icon Badge */}
-                <div className="w-12 h-12 rounded-full bg-gold-50 border border-gold-200/50 flex items-center justify-center mb-6 group-hover:bg-gold-100 transition-colors duration-500">
-                  <span className="text-xl text-gold-700 font-serif">{service.icon}</span>
+                <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center mb-5 group-hover:bg-orange-100 group-hover:border-orange-200 transition-colors duration-500">
+                  <span className="text-lg text-orange-600 font-sans">{service.icon}</span>
                 </div>
 
-                <h3 className="font-serif text-xl font-semibold text-charcoal-800 mb-3 group-hover:text-charcoal-900 transition-colors duration-300">
+                <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-2 group-hover:text-amber-900 transition-colors duration-300">
                   {service.title}
                 </h3>
                 
-                <p className="text-sm text-charcoal-500 font-light leading-relaxed">
+                <p className="text-sm text-charcoal-500 font-light leading-relaxed group-hover:text-charcoal-700 transition-colors duration-300">
                   {service.description}
                 </p>
               </div>
-
-              {/* Action Link Indicator */}
-              <div className="mt-8 pt-6 border-t border-beige-200/50 flex items-center justify-between text-xs font-sans font-semibold tracking-label uppercase text-charcoal-400 group-hover:text-gold-700 transition-colors duration-500">
-                <span>Inquire</span>
-                <svg className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                </svg>
-              </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>

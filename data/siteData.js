@@ -46,40 +46,46 @@ export const aboutContent = {
 
 export const services = [
   {
+    icon: '∿',
+    title: 'Dental X-Rays & Digital Scans',
+    description: 'In-house OPG X-Ray and digital imaging for fast, accurate diagnosis with minimal radiation.',
+    image: '/images/dental xray.jpg',
+  },
+  {
+    icon: '☺',
+    title: 'Scaling & Polishing',
+    description: 'Professional deep cleaning to remove plaque, tartar, and surface stains for healthier gums.',
+    image: '/images/scaling and polishing.jpg',
+  },
+  {
     icon: '✦',
-    title: 'Cosmetic Artistry',
-    description:
-      'Hand-layered porcelain veneers, bespoke smile design, and advanced whitening protocols for an effortlessly luminous appearance.',
+    title: 'Teeth Whitening',
+    description: 'Advanced professional bleaching for a visibly brighter, confident smile in a single session.',
+    image: '/images/teeth whiteing.jpg',
   },
   {
-    icon: '⟡',
-    title: 'Implantology',
-    description:
-      'Precision-guided placement of premium titanium and zirconia fixtures, restoring both flawless aesthetics and structural integrity.',
+    icon: '♡',
+    title: 'Root Canal Treatment',
+    description: 'Painless, single-visit root canal therapy to save your natural tooth and relieve pain.',
+    image: '/images/rootcanaltreatment.jpg',
   },
   {
-    icon: '◈',
-    title: 'Invisalign & Alignment',
-    description:
-      'Discreet, advanced clear aligner therapies and lingual systems designed to elegantly harmonize your bite and smile architecture.',
+    icon: '⛨',
+    title: 'Dental Implant Fixing',
+    description: 'Permanent, natural-looking tooth replacements anchored securely for a lifetime of comfort.',
+    image: '/images/dental implants.jpg',
   },
   {
-    icon: '❖',
-    title: 'Restorative Care',
-    description:
-      'Meticulously milled crowns, bridges, and full-mouth rehabilitations crafted from the world\'s finest dental ceramics.',
+    icon: '☆',
+    title: 'Braces & Clear Aligners',
+    description: 'Modern orthodontic solutions — metal braces or invisible aligners — for straighter, healthier smiles.',
+    image: '/images/braces.jpg',
   },
   {
-    icon: '✧',
-    title: 'Preventive Wellness',
-    description:
-      'Comprehensive periodontal care, digital diagnostic screenings, and personalized longevity plans to preserve your oral health.',
-  },
-  {
-    icon: '◇',
-    title: 'Sedation & Comfort',
-    description:
-      'From soothing ambient environments to advanced IV sedation, every visit is curated to be entirely tranquil and stress-free.',
+    icon: '✿',
+    title: 'Pediatric / Child Dentistry',
+    description: 'Gentle, child-friendly dental care in a warm environment that kids feel comfortable in.',
+    image: '/images/pediatric dental.jpg',
   },
 ];
 
@@ -106,7 +112,7 @@ export const testimonials = [
     name: 'Sophia Chen',
     role: 'Concert Pianist',
     quote:
-      'After years of harboring dental anxiety, the serene environment at Aurelian transformed my perspective. The tailored sedation protocols ensure every visit is profoundly calming and painless.',
+      'After years of harboring dental anxiety, the serene environment at Oralea Dental Care transformed my perspective. The tailored sedation protocols ensure every visit is profoundly calming and painless.',
     rating: 5,
     location: 'SoHo, NY',
     treatment: 'Cosmetic & Sedation',

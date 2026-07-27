@@ -42,7 +42,7 @@ export default function Navbar() {
             <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-amber-300 via-gold-500 to-amber-600 group-hover:scale-105 transition-transform duration-400" />
             <span className="relative text-xl text-charcoal-900 font-serif font-black leading-none drop-shadow-sm">O</span>
           </span>
-          <span className="font-serif text-2xl sm:text-3xl font-extrabold tracking-tight text-charcoal-900 hover:text-gold-500 transition-all duration-300">
+          <span className="font-serif text-2xl sm:text-3xl font-extrabold tracking-tight text-charcoal-900 uppercase hover:text-gold-500 transition-all duration-300">
             {siteInfo.name}
           </span>
         </a>
@@ -108,7 +108,7 @@ export default function Navbar() {
           >
             {/* Close area — re-renders the top bar so user can close */}
             <div className="flex items-center justify-between px-6 py-5">
-              <span className="font-serif text-2xl font-bold text-charcoal-900">
+              <span className="font-serif text-2xl font-bold text-charcoal-900 uppercase">
                 {siteInfo.name}
               </span>
               <button

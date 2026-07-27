@@ -33,7 +33,7 @@ export default function About() {
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft-lg bg-beige-100 border border-beige-200/60">
               <img
                 src="/images/about-clinic.png"
-                alt="Aurelian Dental studio treatment suite"
+                alt="Oralea Dental Care studio treatment suite"
                 className="w-full h-full object-cover object-center"
               />
               {/* Subtle top/bottom vignette */}

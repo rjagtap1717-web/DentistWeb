@@ -27,7 +27,7 @@ export default function Gallery() {
         >
           <span className="section-label mb-3">Sanctuary of Wellness</span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-charcoal-900">
-            Inside Aurelian Studio
+            Inside Oralea Studio
           </h2>
           <span className="gold-rule" />
         </motion.div>
