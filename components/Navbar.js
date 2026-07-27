@@ -67,7 +67,7 @@ export default function Navbar() {
           ))}
 
           {/* CTA */}
-          <a href="#contact" className="btn-primary text-[11px] py-2.5 px-6">
+          <a href="#contact" className="btn-gold text-[12px] py-3 px-8 shadow-[0_4px_20px_rgba(182,157,86,0.35)] hover:shadow-[0_4px_24px_rgba(182,157,86,0.5)] hover:scale-105 transition-all duration-300">
             Book Now
           </a>
         </nav>

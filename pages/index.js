@@ -7,6 +7,7 @@ import Testimonials from '../components/Testimonials';
 import Gallery from '../components/Gallery';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import FloatingSocials from '../components/FloatingSocials';
 import { siteInfo } from '../data/siteData';
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       </Head>
 
       <Navbar />
+      <FloatingSocials />
 
       <main>
         <Hero />
