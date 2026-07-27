@@ -16,7 +16,7 @@ export default function Home() {
         <title>{siteInfo.name} — {siteInfo.tagline}</title>
         <meta
           name="description"
-          content="Aurelian Dental offers world-class cosmetic and restorative dentistry in Manhattan. Porcelain veneers, dental implants, orthodontics, and more — in an atmosphere of quiet luxury."
+          content="Oralea Dental Care offers world-class cosmetic and restorative dentistry in Manhattan. Porcelain veneers, dental implants, orthodontics, and more — in an atmosphere of quiet luxury."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

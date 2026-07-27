@@ -88,7 +88,7 @@ export const testimonials = [
     name: 'Victoria Harrington',
     role: 'Fashion Director',
     quote:
-      'Aurelian Dental redefined my expectations. My bespoke veneers are so exquisitely crafted that even my closest confidants simply assume I have extraordinary genetics. The clinical team is truly world-class.',
+      'Oralea Dental Care redefined my expectations. My bespoke veneers are so exquisitely crafted that even my closest confidants simply assume I have extraordinary genetics. The clinical team is truly world-class.',
     rating: 5,
     location: 'Upper East Side, NY',
     treatment: 'Porcelain Veneers',

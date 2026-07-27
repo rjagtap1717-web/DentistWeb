@@ -39,10 +39,10 @@ export default function Navbar() {
         <a href="#hero" className="flex items-center gap-3.5 group">
           {/* Gold diamond mark */}
           <span className="relative flex items-center justify-center w-10 h-10 shrink-0">
-            <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-amber-300 via-gold-500 to-amber-600 shadow-[0_0_20px_rgba(234,179,8,0.7)] group-hover:scale-105 transition-transform duration-400" />
-            <span className="relative text-xl text-charcoal-900 font-serif font-black leading-none drop-shadow">O</span>
+            <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-amber-300 via-gold-500 to-amber-600 group-hover:scale-105 transition-transform duration-400" />
+            <span className="relative text-xl text-charcoal-900 font-serif font-black leading-none drop-shadow-sm">O</span>
           </span>
-          <span className="font-serif text-2xl sm:text-3xl font-extrabold tracking-tight text-charcoal-900 text-gold-glow drop-shadow-[0_0_18px_rgba(234,179,8,0.65)] hover:text-gold-500 transition-all duration-300">
+          <span className="font-serif text-2xl sm:text-3xl font-extrabold tracking-tight text-charcoal-900 hover:text-gold-500 transition-all duration-300">
             {siteInfo.name}
           </span>
         </a>
@@ -108,7 +108,7 @@ export default function Navbar() {
           >
             {/* Close area — re-renders the top bar so user can close */}
             <div className="flex items-center justify-between px-6 py-5">
-              <span className="font-serif text-2xl font-bold text-charcoal-900 text-gold-glow drop-shadow-[0_0_15px_rgba(234,179,8,0.6)]">
+              <span className="font-serif text-2xl font-bold text-charcoal-900">
                 {siteInfo.name}
               </span>
               <button

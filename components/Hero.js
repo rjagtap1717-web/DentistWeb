@@ -85,9 +85,6 @@ export default function Hero() {
 
           {/* Headline / Punchline */}
           <div className="relative">
-            {/* Ambient golden radial glow behind punchline */}
-            <div className="absolute -left-12 -top-10 w-96 h-96 bg-amber-400/20 rounded-full blur-[100px] pointer-events-none -z-10 animate-pulse-soft" />
-
             <motion.h1
               variants={fadeUp(30)}
               className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-black tracking-tight text-charcoal-900 leading-[1.04]"
@@ -95,11 +92,11 @@ export default function Hero() {
               {heroContent.headline.split('\n').map((line, i) => (
                 <span key={i} className="block">
                   {i === 1 ? (
-                    <span className="text-gold-gradient-bright text-hero-glow drop-shadow-[0_0_35px_rgba(234,179,8,0.85)] italic font-bold">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-br from-gold-500 to-amber-300 italic font-bold drop-shadow-sm">
                       {line}
                     </span>
                   ) : (
-                    <span className="drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)] text-charcoal-900">
+                    <span className="text-charcoal-900">
                       {line}
                     </span>
                   )}

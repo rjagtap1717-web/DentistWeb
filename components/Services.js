@@ -40,15 +40,16 @@ export default function Services() {
         {/* Services Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, i) => (
-            <motion.div
+            <motion.a
               key={service.title}
+              href="#contact"
               custom={i}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
               variants={cardVariants}
               whileHover={{ y: -4, transition: { duration: 0.4, ease } }}
-              className="group glass-card p-8 md:p-9 hover:border-gold-300/40 hover:shadow-soft-xl transition-all duration-500 flex flex-col justify-between"
+              className="group glass-card p-8 md:p-9 hover:border-gold-300/40 hover:shadow-soft-xl transition-all duration-500 flex flex-col justify-between block cursor-pointer"
             >
               <div>
                 {/* Minimal Icon Badge */}
@@ -72,7 +73,7 @@ export default function Services() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                 </svg>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
