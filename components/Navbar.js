@@ -104,7 +104,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
-            className="lg:hidden fixed inset-0 top-0 bg-ivory shadow-2xl z-40 flex flex-col"
+            className="lg:hidden fixed inset-0 top-0 bg-ivory shadow-2xl z-[60] flex flex-col"
           >
             {/* Close area — re-renders the top bar so user can close */}
             <div className="flex items-center justify-between px-6 py-5">
