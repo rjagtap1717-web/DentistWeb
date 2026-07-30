@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
 import { services } from '../data/siteData';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -58,9 +57,11 @@ export default function Services() {
               modifier: 1,
               slideShadows: true,
             }}
-            navigation={true}
-            pagination={{ clickable: true, dynamicBullets: true }}
-            modules={[EffectCoverflow, Navigation, Pagination]}
+            navigation={{
+              prevEl: '.services-prev',
+              nextEl: '.services-next',
+            }}
+            modules={[EffectCoverflow, Navigation]}
             className="w-full py-10 !px-4"
           >
             {services.map((service, i) => (
@@ -95,6 +96,26 @@ export default function Services() {
                 </div>
               </SwiperSlide>
             ))}
+
+            {/* Custom Navigation */}
+            <div slot="container-end" className="flex items-center gap-3 justify-center mt-8">
+              <button
+                aria-label="Scroll left"
+                className="services-prev w-10 h-10 rounded-full border border-beige-300 bg-white/80 hover:bg-white hover:border-gold-400 flex items-center justify-center text-charcoal-600 hover:text-gold-500 transition-all shadow-sm hover:shadow-md active:scale-95 z-10 cursor-pointer"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+              </button>
+              <button
+                aria-label="Scroll right"
+                className="services-next w-10 h-10 rounded-full border border-beige-300 bg-white/80 hover:bg-white hover:border-gold-400 flex items-center justify-center text-charcoal-600 hover:text-gold-500 transition-all shadow-sm hover:shadow-md active:scale-95 z-10 cursor-pointer"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
           </Swiper>
         </div>
       </div>

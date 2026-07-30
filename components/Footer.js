@@ -7,9 +7,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="relative flex items-center justify-center w-7 h-7 rounded-md bg-gold-500/20 border border-gold-500/30">
-                <span className="text-xs text-gold-400 font-serif font-bold leading-none">A</span>
+            <div className="flex items-center gap-3.5 mb-4 group">
+              {/* Gold diamond mark */}
+              <span className="relative flex items-center justify-center w-10 h-10 shrink-0">
+                <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-amber-300 via-gold-500 to-amber-600 group-hover:scale-105 transition-transform duration-400" />
+                <span className="relative text-xl text-charcoal-900 font-serif font-black leading-none drop-shadow-sm">O</span>
               </span>
               <span className="font-serif text-xl font-semibold text-white tracking-wide">
                 {siteInfo.name}

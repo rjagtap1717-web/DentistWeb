@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 import { galleryImages } from '../data/siteData';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectFade } from 'swiper/modules';
+import { Navigation, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
 const ease = [0.22, 1, 0.36, 1];
@@ -41,9 +40,11 @@ export default function Gallery() {
         <div className="w-full max-w-5xl mx-auto px-4">
           <Swiper
             effect={'fade'}
-            navigation={true}
-            pagination={{ clickable: true }}
-            modules={[Navigation, Pagination, EffectFade]}
+            navigation={{
+              prevEl: '.gallery-prev',
+              nextEl: '.gallery-next',
+            }}
+            modules={[Navigation, EffectFade]}
             className="w-full rounded-3xl overflow-hidden shadow-soft"
           >
             {galleryImages.map((img, i) => (
@@ -71,6 +72,26 @@ export default function Gallery() {
                 </div>
               </SwiperSlide>
             ))}
+
+            {/* Custom Navigation */}
+            <div slot="container-end" className="flex items-center gap-3 justify-center mt-8">
+              <button
+                aria-label="Scroll left"
+                className="gallery-prev w-10 h-10 rounded-full border border-beige-300 bg-white/80 hover:bg-white hover:border-gold-400 flex items-center justify-center text-charcoal-600 hover:text-gold-500 transition-all shadow-sm hover:shadow-md active:scale-95 z-10 cursor-pointer"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+              </button>
+              <button
+                aria-label="Scroll right"
+                className="gallery-next w-10 h-10 rounded-full border border-beige-300 bg-white/80 hover:bg-white hover:border-gold-400 flex items-center justify-center text-charcoal-600 hover:text-gold-500 transition-all shadow-sm hover:shadow-md active:scale-95 z-10 cursor-pointer"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
           </Swiper>
         </div>
       </div>
