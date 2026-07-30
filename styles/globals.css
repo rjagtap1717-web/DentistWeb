@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +15,7 @@
   }
 
   body {
-    @apply bg-ivory text-charcoal-600 font-sans text-base leading-relaxed;
+    @apply bg-ivory text-charcoal-600 font-sans text-base leading-relaxed tracking-[-0.02em];
   }
 
   /* ── Headings reset ────────────────────────────────────── */
@@ -25,7 +25,7 @@
   h4,
   h5,
   h6 {
-    @apply font-serif font-semibold text-charcoal-800 leading-tight;
+    @apply font-serif font-medium text-charcoal-800 leading-tight italic;
   }
 
   /* ── Selection highlight ───────────────────────────────── */
@@ -164,4 +164,46 @@
 
 .animate-marquee-track:hover {
   animation-play-state: paused;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SWIPER CUSTOMIZATION
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  --swiper-theme-color: #d4af37; /* Gold */
+  --swiper-navigation-size: 24px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #a3a3a3;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--swiper-theme-color);
+  opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+  color: #333 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: white;
+  color: var(--swiper-theme-color) !important;
+  transform: scale(1.05);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important;
+  font-weight: bold;
 }

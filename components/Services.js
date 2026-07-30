@@ -1,5 +1,11 @@
 import { motion } from 'framer-motion';
 import { services } from '../data/siteData';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -37,45 +43,59 @@ export default function Services() {
           </p>
         </motion.div>
 
-        {/* Services Grid (Flex layout so incomplete rows center nicely) */}
-        <div className="flex flex-wrap justify-center gap-6">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.15 }}
-              variants={cardVariants}
-              whileHover={{ y: -4, transition: { duration: 0.4, ease } }}
-              className="group glass-card overflow-hidden hover:bg-amber-50/50 hover:border-amber-200 hover:shadow-soft-xl transition-all duration-500 flex flex-col w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]"
-            >
-              {/* Image Placeholder */}
-              <div className="w-full h-40 sm:h-48 bg-beige-200 relative overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
+        {/* Services Carousel */}
+        <div className="w-full pb-8">
+          <Swiper
+            effect={'coverflow'}
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={'auto'}
+            initialSlide={1}
+            coverflowEffect={{
+              rotate: 30,
+              stretch: 0,
+              depth: 150,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            navigation={true}
+            pagination={{ clickable: true, dynamicBullets: true }}
+            modules={[EffectCoverflow, Navigation, Pagination]}
+            className="w-full py-10 !px-4"
+          >
+            {services.map((service, i) => (
+              <SwiperSlide key={service.title} className="!w-[85vw] !max-w-[340px] sm:!w-[340px]">
+                <div
+                  className="group glass-card overflow-hidden hover:bg-amber-50/50 hover:border-amber-200 transition-all duration-500 flex flex-col h-[420px] w-full"
+                >
+                  {/* Image Placeholder */}
+                  <div className="w-full h-48 bg-beige-200 relative overflow-hidden shrink-0">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
 
-              {/* Content Area */}
-              <div className="p-6 md:p-7 flex flex-col flex-grow">
-                {/* Minimal Icon Badge */}
-                <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center mb-5 group-hover:bg-orange-100 group-hover:border-orange-200 transition-colors duration-500">
-                  <span className="text-lg text-orange-600 font-sans">{service.icon}</span>
+                  {/* Content Area */}
+                  <div className="p-6 md:p-7 flex flex-col flex-grow">
+                    {/* Minimal Icon Badge */}
+                    <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center mb-5 group-hover:bg-orange-100 group-hover:border-orange-200 transition-colors duration-500">
+                      <span className="text-lg text-orange-600 font-sans">{service.icon}</span>
+                    </div>
+
+                    <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-2 group-hover:text-amber-900 transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-sm text-charcoal-500 font-light leading-relaxed group-hover:text-charcoal-700 transition-colors duration-300 line-clamp-3">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
-
-                <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-2 group-hover:text-amber-900 transition-colors duration-300">
-                  {service.title}
-                </h3>
-                
-                <p className="text-sm text-charcoal-500 font-light leading-relaxed group-hover:text-charcoal-700 transition-colors duration-300">
-                  {service.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

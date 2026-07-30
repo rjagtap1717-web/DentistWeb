@@ -27,10 +27,10 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-luxury ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-luxury bg-ivory/85 backdrop-blur-xl shadow-soft ${
         scrolled
-          ? 'bg-ivory/85 backdrop-blur-xl shadow-soft py-3'
-          : 'bg-transparent py-5 md:py-6'
+          ? 'py-2'
+          : 'py-3 md:py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -42,7 +42,7 @@ export default function Navbar() {
             <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-amber-300 via-gold-500 to-amber-600 group-hover:scale-105 transition-transform duration-400" />
             <span className="relative text-xl text-charcoal-900 font-serif font-black leading-none drop-shadow-sm">O</span>
           </span>
-          <span className="font-serif text-2xl sm:text-3xl font-extrabold tracking-tight text-charcoal-900 uppercase hover:text-gold-500 transition-all duration-300">
+          <span className="font-serif text-2xl sm:text-3xl font-extrabold tracking-tight text-charcoal-900 hover:text-gold-500 transition-all duration-300">
             {siteInfo.name}
           </span>
         </a>
@@ -104,11 +104,11 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
-            className="lg:hidden fixed inset-0 top-0 bg-ivory/97 backdrop-blur-2xl z-40 flex flex-col"
+            className="lg:hidden fixed inset-0 top-0 bg-ivory shadow-2xl z-40 flex flex-col"
           >
             {/* Close area — re-renders the top bar so user can close */}
             <div className="flex items-center justify-between px-6 py-5">
-              <span className="font-serif text-2xl font-bold text-charcoal-900 uppercase">
+              <span className="font-serif text-2xl font-bold text-charcoal-900">
                 {siteInfo.name}
               </span>
               <button

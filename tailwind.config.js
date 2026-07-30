@@ -66,8 +66,8 @@ module.exports = {
 
       /* ── Typography ─────────────────────────────────────── */
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', '"Times New Roman"', 'serif'],
-        sans:  ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', '"Times New Roman"', 'serif'],
+        sans:  ['"DM Sans"', 'system-ui', '-apple-system', 'sans-serif'],
       },
       fontSize: {
         /* Display sizes for hero / section headlines */

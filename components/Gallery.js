@@ -1,6 +1,11 @@
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { galleryImages } from '../data/siteData';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -27,50 +32,46 @@ export default function Gallery() {
         >
           <span className="section-label mb-3">Sanctuary of Wellness</span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-charcoal-900">
-            Inside Oralea Studio
+            Gallery
           </h2>
           <span className="gold-rule" />
         </motion.div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {galleryImages.map((img, i) => (
-            <motion.div
-              key={img.label}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={itemVariants}
-              whileHover={{ y: -4, transition: { duration: 0.3, ease } }}
-              className={`group relative rounded-3xl overflow-hidden border border-beige-200/80 shadow-soft ${i === 0 || i === 3 ? 'md:row-span-2 aspect-[3/4]' : 'aspect-[4/3]'
-                }`}
-            >
-              {/* Image using next/image */}
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition-transform duration-700 ease-luxury group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-
-              {/* Minimal Overlay Info */}
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/60 via-charcoal-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 md:p-8">
-                <div className="translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
-                  <span className="text-[10px] font-sans font-semibold tracking-label uppercase text-gold-300 block mb-1">
-                    Environment
-                  </span>
-                  <h3 className="font-serif text-xl text-white font-medium">
-                    {img.label}
-                  </h3>
-                  <p className="text-xs text-ivory/80 font-light mt-1">
-                    {img.alt}
-                  </p>
+        {/* Gallery Carousel */}
+        <div className="w-full max-w-5xl mx-auto px-4">
+          <Swiper
+            effect={'fade'}
+            navigation={true}
+            pagination={{ clickable: true }}
+            modules={[Navigation, Pagination, EffectFade]}
+            className="w-full rounded-3xl overflow-hidden shadow-soft"
+          >
+            {galleryImages.map((img, i) => (
+              <SwiperSlide key={img.label}>
+                <div className="group relative w-full aspect-video bg-charcoal-900">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-luxury group-hover:scale-105"
+                  />
+                  {/* Minimal Overlay Info */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-transparent to-transparent flex items-end p-6 md:p-10 pointer-events-none">
+                    <div>
+                      <span className="text-[10px] font-sans font-semibold tracking-label uppercase text-gold-300 block mb-1">
+                        Environment
+                      </span>
+                      <h3 className="font-serif text-2xl md:text-3xl text-white font-medium drop-shadow-md">
+                        {img.label}
+                      </h3>
+                      <p className="text-sm md:text-base text-ivory/90 font-light mt-2 max-w-lg drop-shadow-md">
+                        {img.alt}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

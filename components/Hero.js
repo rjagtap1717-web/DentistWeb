@@ -143,7 +143,7 @@ export default function Hero() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="max-w-4xl p-6 sm:p-8 md:p-14 lg:p-16 border border-white/40 shadow-[0_16px_48px_rgba(0,0,0,0.25)] rounded-3xl backdrop-blur-xl bg-ivory/25"
+            className="max-w-3xl p-6 sm:p-8 md:p-10 lg:p-12 border border-white/40 shadow-[0_16px_48px_rgba(0,0,0,0.25)] rounded-3xl backdrop-blur-xl bg-ivory/25"
           >
             {/* Overline label */}
             <motion.div variants={fadeUp(16)} className="mb-4 sm:mb-6">
@@ -160,12 +160,12 @@ export default function Hero() {
             <div className="relative">
               <motion.h1
                 variants={fadeUp(30)}
-                className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[7.5rem] font-black tracking-tight text-charcoal-900 leading-[1.04]"
+                className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-charcoal-900 leading-[1.04]"
               >
                 {heroContent.headline.split('\n').map((line, i) => (
                   <span key={i} className="block pb-1 sm:pb-2">
                     {i === 1 ? (
-                      <span className="font-script font-normal text-[3.25rem] sm:text-6xl md:text-[6.5rem] lg:text-[8.5rem] tracking-normal leading-[0.8] text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-amber-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] py-1 sm:py-2">
+                      <span className="font-script font-normal text-[3.25rem] sm:text-6xl md:text-7xl lg:text-[7rem] tracking-normal leading-[0.8] text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-amber-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] py-1 sm:py-2">
                         {line}
                       </span>
                     ) : (
