@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import Splash from '../components/Splash';
 import About from '../components/About';
 import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
@@ -26,6 +27,7 @@ export default function Home() {
       <FloatingSocials />
 
       <main>
+        <Splash />
         <Hero />
         <About />
         <Services />

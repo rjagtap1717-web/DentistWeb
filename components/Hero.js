@@ -47,17 +47,17 @@ export default function Hero() {
 
   return (
     <section ref={introContainerRef} className="relative h-[300vh] bg-[#0a0a0a]">
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+      <div className="sticky top-[64px] md:top-[72px] h-[calc(100vh-64px)] md:h-[calc(100vh-72px)] w-full overflow-hidden">
         {/* Before Image */}
         <img 
-          src="/images/Gemini_Generated_Image_Before.png" 
+          src="/images/beforesmile.png" 
           alt="Before Transformation" 
           className="absolute inset-0 w-full h-full object-cover object-[25%] sm:object-center"
         />
         {/* After Image (Horizontal Wipe from left to right) */}
         <img 
           ref={afterImgRef}
-          src="/images/ChatGPT Image After.png" 
+          src="/images/whitesmile.png" 
           alt="After Transformation" 
           className="absolute inset-0 w-full h-full object-cover object-[25%] sm:object-center"
           style={{ clipPath: 'inset(0% 100% 0% 0%)' }}

@@ -11,8 +11,13 @@ export default function Navbar() {
 
   /* Track scroll position */
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      // Show navbar only after scrolling past a portion of the splash screen
+      setScrolled(window.scrollY > window.innerHeight * 0.2);
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
+    // Check initially in case of page reload halfway down
+    onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -24,8 +29,8 @@ export default function Navbar() {
 
   return (
     <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: scrolled ? 0 : -100, opacity: scrolled ? 1 : 0 }}
       transition={{ duration: 0.8, ease }}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-luxury bg-ivory/85 backdrop-blur-xl shadow-soft ${
         scrolled
