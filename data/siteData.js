@@ -6,7 +6,7 @@
 export const siteInfo = {
   name: 'Oralea Dental Care',
   tagline: 'Where Artistry Meets Dentistry',
-  phone: '(212) 555-0198',
+  phone: '(869) 864-8356',
   email: 'concierge@oraleadentalcare.com',
   address: '742 Fifth Avenue, Suite 1200, New York, NY 10019',
   hours: 'Mon – Fri: 8 AM – 6 PM · Sat: 9 AM – 2 PM',
@@ -193,7 +193,7 @@ export const contactContent = {
   formFields: [
     { name: 'name', label: 'Full Name', type: 'text', placeholder: 'Victoria Harrington' },
     { name: 'email', label: 'Email Address', type: 'email', placeholder: 'victoria@example.com' },
-    { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '(212) 555-0198' },
+    { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '(869) 864-8356' },
     {
       name: 'service', label: 'Primary Interest', type: 'select', placeholder: 'Select a clinical focus',
       options: ['Cosmetic Artistry', 'Implantology', 'Invisalign & Alignment', 'Restorative Care', 'Preventive Wellness', 'Sedation & Comfort'],

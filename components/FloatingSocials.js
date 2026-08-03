@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { siteInfo } from '../data/siteData';
 
 export default function FloatingSocials() {
   const [visible, setVisible] = useState(false);
@@ -55,7 +56,9 @@ export default function FloatingSocials() {
 
           {/* WhatsApp */}
           <a 
-            href="#" 
+            href={`https://wa.me/${siteInfo.phone.replace(/\D/g, '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="WhatsApp"
             className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#25D366] flex items-center justify-center 
                        shadow-[inset_0_0_12px_rgba(255,255,255,0.45)] drop-shadow-sm 

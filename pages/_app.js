@@ -13,9 +13,20 @@ export default function App({ Component, pageProps }) {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
+    
+    // Fallback: force scroll to top on unload so the browser doesn't try to remember it
     window.onbeforeunload = () => {
       window.scrollTo(0, 0);
     };
+
+    // Robust post-hydration scroll logic to beat GSAP's initialization cycle
+    const timers = [
+      setTimeout(() => window.scrollTo(0, 0), 10),
+      setTimeout(() => window.scrollTo(0, 0), 100),
+      setTimeout(() => window.scrollTo(0, 0), 300)
+    ];
+
+    return () => timers.forEach(clearTimeout);
   }, []);
 
   return <Component {...pageProps} />;
