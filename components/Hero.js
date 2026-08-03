@@ -47,19 +47,19 @@ export default function Hero() {
 
   return (
     <section ref={introContainerRef} className="relative h-[300vh] bg-[#0a0a0a]">
-      <div className="sticky top-[64px] md:top-[72px] h-[calc(100vh-64px)] md:h-[calc(100vh-72px)] w-full overflow-hidden">
+      <div className="sticky top-[64px] md:top-[72px] h-[75vh] md:h-[calc(100vh-72px)] w-full overflow-hidden">
         {/* Before Image */}
         <img 
           src="/images/b4smile.png" 
           alt="Before Transformation" 
-          className="absolute inset-0 w-full h-full object-cover object-top md:object-right"
+          className="absolute inset-0 w-full h-full object-cover object-[55%_30%] md:object-[80%_center] lg:object-right"
         />
         {/* After Image (Horizontal Wipe from left to right) */}
         <img 
           ref={afterImgRef}
           src="/images/aftersmile.png" 
           alt="After Transformation" 
-          className="absolute inset-0 w-full h-full object-cover object-top md:object-right"
+          className="absolute inset-0 w-full h-full object-cover object-[55%_30%] md:object-[80%_center] lg:object-right"
           style={{ clipPath: 'inset(0% 100% 0% 0%)' }}
         />
         
