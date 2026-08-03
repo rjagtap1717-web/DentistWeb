@@ -52,19 +52,19 @@ export default function Hero() {
         <img 
           src="/images/b4smile.png" 
           alt="Before Transformation" 
-          className="absolute inset-0 w-full h-full object-cover object-[60%] md:object-right"
+          className="absolute inset-0 w-full h-full object-cover object-top md:object-right"
         />
         {/* After Image (Horizontal Wipe from left to right) */}
         <img 
           ref={afterImgRef}
           src="/images/aftersmile.png" 
           alt="After Transformation" 
-          className="absolute inset-0 w-full h-full object-cover object-[60%] md:object-right"
+          className="absolute inset-0 w-full h-full object-cover object-top md:object-right"
           style={{ clipPath: 'inset(0% 100% 0% 0%)' }}
         />
         
-        {/* Card Overlay - Aligned to the right */}
-        <div className="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-end z-20 pointer-events-none">
+        {/* Card Overlay - Aligned to bottom on mobile, right on desktop */}
+        <div className="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-end pb-32 md:pb-0 md:items-center justify-center md:justify-end z-20 pointer-events-none">
           <div 
             ref={cardRef} 
             className="max-w-xl p-6 sm:p-8 md:p-10 border border-white/40 shadow-[0_16px_48px_rgba(0,0,0,0.25)] rounded-3xl backdrop-blur-xl bg-ivory/40 pointer-events-auto opacity-0 translate-y-[50px] mr-0 lg:-mr-12 xl:-mr-16"
