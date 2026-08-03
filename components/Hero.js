@@ -52,14 +52,14 @@ export default function Hero() {
         <img 
           src="/images/b4smile.png" 
           alt="Before Transformation" 
-          className="absolute inset-0 w-full h-full object-cover object-[55%_30%] md:object-[80%_center] lg:object-right"
+          className="absolute inset-0 w-full h-full object-cover object-[25%_35%] md:object-[20%_center] lg:object-[15%_center]"
         />
         {/* After Image (Horizontal Wipe from left to right) */}
         <img 
           ref={afterImgRef}
           src="/images/aftersmile.png" 
           alt="After Transformation" 
-          className="absolute inset-0 w-full h-full object-cover object-[55%_30%] md:object-[80%_center] lg:object-right"
+          className="absolute inset-0 w-full h-full object-cover object-[25%_35%] md:object-[20%_center] lg:object-[15%_center]"
           style={{ clipPath: 'inset(0% 100% 0% 0%)' }}
         />
         
