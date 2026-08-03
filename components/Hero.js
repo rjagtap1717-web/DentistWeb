@@ -50,16 +50,16 @@ export default function Hero() {
       <div className="sticky top-[64px] md:top-[72px] h-[calc(100vh-64px)] md:h-[calc(100vh-72px)] w-full overflow-hidden">
         {/* Before Image */}
         <img 
-          src="/images/beforesmile.png" 
+          src="/images/b4smile.png" 
           alt="Before Transformation" 
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[60%] md:object-right"
         />
         {/* After Image (Horizontal Wipe from left to right) */}
         <img 
           ref={afterImgRef}
-          src="/images/whitesmile.png" 
+          src="/images/aftersmile.png" 
           alt="After Transformation" 
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[60%] md:object-right"
           style={{ clipPath: 'inset(0% 100% 0% 0%)' }}
         />
         

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Splash from '../components/Splash';
@@ -12,6 +13,13 @@ import FloatingSocials from '../components/FloatingSocials';
 import { siteInfo } from '../data/siteData';
 
 export default function Home() {
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Head>

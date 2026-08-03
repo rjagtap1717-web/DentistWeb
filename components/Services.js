@@ -49,7 +49,7 @@ export default function Services() {
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={'auto'}
-            initialSlide={1}
+            loop={true}
             coverflowEffect={{
               rotate: 30,
               stretch: 0,
