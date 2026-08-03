@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Splash from '../components/Splash';
@@ -17,7 +18,17 @@ export default function Home() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    window.scrollTo(0, 0);
+    
+    // Ultimate hack for mobile browsers: Lock the scroll height temporarily so the browser CANNOT restore the scroll position
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      ScrollTrigger.refresh(); // Recalculate GSAP after unlocking scroll
+    }, 150);
   }, []);
 
   return (
